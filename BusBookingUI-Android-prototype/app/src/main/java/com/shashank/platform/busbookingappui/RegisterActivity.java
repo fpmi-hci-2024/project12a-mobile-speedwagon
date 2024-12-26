@@ -9,15 +9,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText usernameInput, emailInput, passwordInput, confirmPasswordInput;
-    Button registerButton;
+    private EditText usernameInput, emailInput, passwordInput, confirmPasswordInput;
+    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Элементы интерфейса
+        // Инициализация элементов интерфейса
         usernameInput = findViewById(R.id.usernameInput);
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
@@ -26,17 +26,27 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Обработка нажатия кнопки регистрации
         registerButton.setOnClickListener(view -> {
-            // Здесь добавьте логику регистрации
-            String username = usernameInput.getText().toString();
-            String email = emailInput.getText().toString();
-            String password = passwordInput.getText().toString();
-            String confirmPassword = confirmPasswordInput.getText().toString();
+            // Получение данных из полей ввода
+            String username = usernameInput.getText().toString().trim();
+            String email = emailInput.getText().toString().trim();
+            String password = passwordInput.getText().toString().trim();
+            String confirmPassword = confirmPasswordInput.getText().toString().trim();
 
+            // Проверка на пустые поля
+            if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+                Toast.makeText(RegisterActivity.this, "Пожалуйста, заполните все поля.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Проверка на совпадение паролей
             if (!password.equals(confirmPassword)) {
                 Toast.makeText(RegisterActivity.this, "Пароли не совпадают", Toast.LENGTH_SHORT).show();
                 return;
             }
-            // Вход после регистрации (здесь должна быть логика сохранения пользователя)
+
+            // Здесь добавьте логику регистрации (например, сохранение пользователя в базе данных)
+
+            // Переход на главный экран после успешной регистрации
             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
             startActivity(intent);
             finish();

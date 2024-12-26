@@ -45,7 +45,8 @@
                     android:background="@drawable/round_rect_shape"
                     android:hint="Откуда"
                     android:textSize="18sp"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:autofillHints="" />
 
                 <ImageView
                     android:layout_width="100dp"

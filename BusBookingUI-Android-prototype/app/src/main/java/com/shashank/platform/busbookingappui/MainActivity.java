@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,10 +27,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Обработка нажатия кнопки входа
         loginButton.setOnClickListener(view -> {
-            // Здесь добавьте логику аутентификации
-            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-            startActivity(intent);
-            finish(); // Завершаем текущую активность
+            String login = loginInput.getText().toString();
+            String password = passwordInput.getText().toString();
+
+            // Проверка логина и пароля
+            if (login.equals("user") && password.equals("password")) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+                finish(); // Завершаем текущую активность
+            } else {
+                // Вывод сообщения об ошибке
+                Toast.makeText(MainActivity.this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // Обработка нажатия кнопки регистрации

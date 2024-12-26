@@ -34,95 +34,33 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/fromField"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/round_rect_shape"
-                    android:hint="Откуда"
-                    android:textSize="18sp"
-                    android:padding="10dp"
-                    android:autofillHints="" />
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/arrows" />
-            </RelativeLayout>
-
-            <RelativeLayout
+            <Spinner
+                android:id="@+id/fromSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:background="@drawable/round_rect_shape" />
 
-                <EditText
-                    android:id="@+id/toField"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/round_rect_shape"
-                    android:hint="Куда"
-                    android:textSize="18sp"
-                    android:padding="10dp" />
 
-            </RelativeLayout>
-
-            <LinearLayout
+            <Spinner
+                android:id="@+id/toSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/round_rect_shape" />
 
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
+            <Spinner
+                android:id="@+id/dateSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/round_rect_shape" />
 
-                    <EditText
-                        android:id="@+id/dateField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/round_rect_shape"
-                        android:hint="Дата"
-                        android:textSize="18sp"
-                        android:padding="10dp" />
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/mark" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp">
-
-                    <EditText
-                        android:id="@+id/passengersField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/round_rect_shape"
-                        android:hint="Количество пассажиров"
-                        android:textSize="18sp"
-                        android:padding="10dp" />
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/mark" />
-                </RelativeLayout>
-            </LinearLayout>
+            <Spinner
+                android:id="@+id/passengersSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/round_rect_shape" />
 
             <Button
                 android:id="@+id/searchButton"
@@ -136,7 +74,6 @@
         </LinearLayout>
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="81dp"
@@ -148,7 +85,7 @@
         android:padding="10dp">
 
         <ImageButton
-            android:id="@+id/button1"
+            android:id="@+id/SearchButton"
             android:layout_width="16dp"
             android:layout_height="90dp"
             android:layout_weight="1"
@@ -156,7 +93,7 @@
             android:src="@drawable/search" />
 
         <ImageButton
-            android:id="@+id/button2"
+            android:id="@+id/MenuButton"
             android:layout_width="16dp"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -164,7 +101,7 @@
             android:src="@drawable/menu" />
 
         <ImageButton
-            android:id="@+id/button3"
+            android:id="@+id/OrdersButton"
             android:layout_width="16dp"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -172,14 +109,14 @@
             android:src="@drawable/orders" />
 
         <ImageButton
-            android:id="@+id/button4"
+            android:id="@+id/profileButton"
             android:layout_width="16dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:background="@null"
             android:src="@drawable/profile" />
     </LinearLayout>
-    </FrameLayout>
+</FrameLayout>
 
 
 

@@ -5,16 +5,34 @@
     <string name="login_button">Вход</string>
     <string name="register_text">Зарегистрироваться</string>
     <string name="app_name">Bus Booking</string>
+
+    <string-array name="cities_array">
+        <item>Город 1</item>
+        <item>Город 2</item>
+        <item>Город 3</item>
+        <item>Город 4</item>
+        <item>Город 5</item>
+    </string-array>
+    <string-array name="dates_array">
+        <item>01–01-2023</item>
+        <item>02-01-2023</item>
+        <item>03-01-2023</item>
+    </string-array>
+    <string-array name="passengers_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
     <string-array name="boarding_points">
-        <item>Могилёв</item>
-        <item>Бобруйск</item>
-        <item>Минск</item>
-        <item>Гомель</item>
+        <item>Станция 1</item>
+        <item>Станция 2</item>
+        <item>Станция 3</item>
     </string-array>
     <string-array name="drop_off_points">
-        <item>Бобруйск</item>
-        <item>Минск</item>
-        <item>Гомель</item>
-        <item>Гродно</item>
+        <item>Станция A</item>
+        <item>Станция B</item>
+        <item>Станция C</item>
     </string-array>
 </resources>

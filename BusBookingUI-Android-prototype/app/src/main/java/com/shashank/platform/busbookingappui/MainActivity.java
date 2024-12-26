@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             String password = passwordInput.getText().toString();
 
             // Проверка логина и пароля
-            if (login.equals("user") && password.equals("password")) {
+            if (login.equals("u") && password.equals("1")) {
                 Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(intent);
                 finish(); // Завершаем текущую активность

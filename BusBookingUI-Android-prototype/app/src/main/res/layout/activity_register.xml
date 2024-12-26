@@ -22,10 +22,9 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SpeedWagon"
+            android:text="Регистрация"
             android:textColor="#2196F3"
             android:textSize="60sp"
-
             android:textStyle="bold" />
 
         <LinearLayout
@@ -37,12 +36,23 @@
             tools:ignore="ExtraText">
 
             <EditText
-                android:id="@+id/loginInput"
+                android:id="@+id/usernameInput"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/round_rect_shape"
-                android:hint="Логин"
-                android:textSize="22sp"
+            android:hint="Имя пользователя"
+            android:textSize="22sp"
+            android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+            android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/round_rect_shape"
+            android:hint="Электронная почта"
+            android:textSize="22sp"
             android:textStyle="bold"
                 android:layout_marginBottom="8dp"
             android:padding="10dp" />
@@ -52,21 +62,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/round_rect_shape"
-                android:hint="Пароль"
-                android:inputType="textPassword"
-                android:textSize="22sp"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:textSize="22sp"
             android:textStyle="bold"
+                android:layout_marginBottom="8dp"
             android:padding="10dp" />
 
-            <Button
-                android:id="@+id/loginButton"
+            <EditText
+                android:id="@+id/confirmPasswordInput"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#008080"
-                android:text="Вход"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:layout_height="60dp"
+                android:background="@drawable/round_rect_shape"
+            android:hint="Подтверждение пароля"
+            android:inputType="textPassword"
+            android:textSize="22sp"
+            android:textStyle="bold"
+
+            android:padding="10dp" />
 
             <Button
                 android:id="@+id/registerButton"
@@ -74,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="#008080"
-                android:text="Регистрация"
+                android:text="Зарегистрироваться"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
         </LinearLayout>

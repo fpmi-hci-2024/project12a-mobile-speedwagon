@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">Bus Booking App UI</string>
+    <string name="speed_wagon">Speed Wagon</string>
+    <string name="username">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="login_button">Вход</string>
+    <string name="register_text">Зарегистрироваться</string>
+    <string name="app_name">Bus Booking</string>
+    <string-array name="boarding_points">
+        <item>Могилёв</item>
+        <item>Бобруйск</item>
+        <item>Минск</item>
+        <item>Гомель</item>
+    </string-array>
+    <string-array name="drop_off_points">
+        <item>Бобруйск</item>
+        <item>Минск</item>
+        <item>Гомель</item>
+        <item>Гродно</item>
+    </string-array>
 </resources>

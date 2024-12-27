@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:text="Регистрация"
             android:textColor="#2196F3"
-            android:textSize="60sp"
+            android:textSize="50sp"
             android:textStyle="bold" />
 
         <LinearLayout

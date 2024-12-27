@@ -7,7 +7,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.List;
 
 public class FlightsActivity extends AppCompatActivity {
     private LinearLayout flightsLayout;
@@ -46,14 +50,19 @@ public class FlightsActivity extends AppCompatActivity {
     }
 
     private void loadAvailableFlights(String from, String to, String date, String passengers) {
-        // Пример добавления маршрута на основе переданных данных
-        for (int i = 0; i < 5; i++) { // Предположим, 5 маршрутов для примера
-            // Используем переданные данные для создания информации о рейсах
-            String time1 = "8:00";
-            String price = "15 руб.";
-            String freeSeats = String.valueOf(10 - i); // Пример свободных мест
+        // Формируем ключ для маршрута
+        String key = from + "-" + to;
+        List<Database.Route> availableRoutes = Database.routes.get(key);
 
-            // Создаем контейнер для маршрута
+        if (availableRoutes == null || availableRoutes.isEmpty()) {
+            // Если маршрутов нет
+            Toast.makeText(this, "Маршруты не найдены", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Проходим по всем маршрутам и отображаем их
+        for (Database.Route route : availableRoutes) {
+            // Создаём контейнер для маршрута
             LinearLayout flightLayout = new LinearLayout(this);
             flightLayout.setOrientation(LinearLayout.VERTICAL);
             flightLayout.setPadding(16, 16, 16, 16);
@@ -62,10 +71,10 @@ public class FlightsActivity extends AppCompatActivity {
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT));
 
-            // Создаем текстовое представление для маршрута
+            // Создаём текстовое представление маршрута
             TextView flightInfo = new TextView(this);
-            flightInfo.setText(String.format("%s\n%s %s\nЦена за 1 место: %s\nСвободно: %s",
-                    from, time1, "→", to, price, freeSeats));
+            flightInfo.setText(String.format("%s → %s\nОтправление: %s\nПрибытие: %s\nЦена за 1 место: %d руб.\nСвободно: %d",
+                    from, to, route.departureTime, route.arrivalTime, route.price, route.availableSeats));
             flightInfo.setTextSize(18);
             flightInfo.setTextColor(getResources().getColor(android.R.color.black));
 
@@ -77,23 +86,29 @@ public class FlightsActivity extends AppCompatActivity {
             orderButton.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT));
+            // Обработка нажатия кнопки заказа
             orderButton.setOnClickListener(view -> {
                 // Обработка нажатия кнопки заказа
                 Intent orderIntent = new Intent(FlightsActivity.this, OrderActivity.class);
                 orderIntent.putExtra("from", from);
                 orderIntent.putExtra("to", to);
                 orderIntent.putExtra("date", date);
-                orderIntent.putExtra("time", time1); // Передаем время
-                orderIntent.putExtra("price", price); // Передаем цену
-                orderIntent.putExtra("passengers", passengers); // Передаем количество пассажиров
+                orderIntent.putExtra("departureTime", route.departureTime); // Время отправления
+                orderIntent.putExtra("arrivalTime", route.arrivalTime); // Время прибытия
+                orderIntent.putExtra("price", route.price); // Цена
+                orderIntent.putExtra("passengers", passengers); // Количество пассажиров
+                orderIntent.putExtra("route", from + " → " + to); // Добавлено: маршрут
+                orderIntent.putExtra("time", route.departureTime); // Добавлено: время
                 startActivity(orderIntent);
             });
+
 
             // Добавляем элементы в контейнер
             flightLayout.addView(flightInfo);
             flightLayout.addView(orderButton);
             flightsLayout.addView(flightLayout);
         }
+
     }
 }
 

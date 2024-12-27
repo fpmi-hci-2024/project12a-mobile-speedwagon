@@ -1,0 +1,53 @@
+<resources>
+    <string name="speed_wagon">Speed Wagon</string>
+    <string name="username">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="login_button">Вход</string>
+    <string name="register_text">Зарегистрироваться</string>
+    <string name="app_name">Bus Booking</string>
+    <string-array name="seats_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="payment_methods">
+        <item>Кредитная карта</item>
+        <item>Дебетовая карта</item>
+        <item>Наличные</item>
+        <item>Электронный кошелек</item>
+    </string-array>
+    <string-array name="cities_array">
+        <item>Минск</item>
+        <item>Гомель</item>
+        <item>Брест</item>
+        <item>Гродно</item>
+        <item>Могилев</item>
+    </string-array>
+
+    <string-array name="boarding_points">
+        <item>Станция 1</item>
+        <item>Станция 2</item>
+        <item>Станция 3</item>
+    </string-array>
+    <string-array name="drop_off_points">
+        <item>Станция A</item>
+        <item>Станция B</item>
+        <item>Станция C</item>
+    </string-array>
+    <string-array name="dates_array">
+        <item>Сегодня</item>
+        <item>Завтра</item>
+        <item>Послезавтра</item>
+        <item>На выходные</item>
+    </string-array>
+    <string-array name="passengers_array">
+        <item>5-10 пассажиров</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>Больше</item>
+    </string-array>
+</resources>

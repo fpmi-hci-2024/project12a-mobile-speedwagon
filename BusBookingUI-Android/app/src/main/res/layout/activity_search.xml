@@ -34,33 +34,91 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <Spinner
-                android:id="@+id/fromSpinner"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/fromField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_rect_shape"
+                    android:hint="Откуда"
+                    android:textSize="18sp"
+                    android:padding="10dp" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrows" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_rect_shape" />
+                android:layout_marginTop="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/toField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_rect_shape"
+                    android:hint="Куда"
+                    android:textSize="18sp"
+                    android:padding="10dp" />
+
+            </RelativeLayout>
 
 
-            <Spinner
-                android:id="@+id/toSpinner"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/round_rect_shape" />
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
 
-            <Spinner
-                android:id="@+id/dateSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/round_rect_shape" />
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
 
-            <Spinner
-                android:id="@+id/passengersSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/round_rect_shape" />
+                    <Spinner
+                        android:id="@+id/dateSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                    android:background="@drawable/round_rect_shape"
+                    android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/mark" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp">
+
+                    <Spinner
+                        android:id="@+id/passengersSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                    android:background="@drawable/round_rect_shape"
+                    android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/mark" />
+                </RelativeLayout>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/searchButton"
@@ -117,6 +175,7 @@
             android:src="@drawable/profile" />
     </LinearLayout>
 </FrameLayout>
+
 
 
 

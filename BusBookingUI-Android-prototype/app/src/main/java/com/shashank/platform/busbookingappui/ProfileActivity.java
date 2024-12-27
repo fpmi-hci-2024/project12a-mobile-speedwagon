@@ -18,6 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
     EditText firstNameEditText, lastNameEditText, middleNameEditText, phoneEditText, emailEditText;
     Button saveButton, logoutButton;
     ListView ordersListView;
+    ArrayList<String> ordersList; // Список заказов
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,20 @@ public class ProfileActivity extends AppCompatActivity {
         firstNameEditText.setText(username);
         emailEditText.setText(email);
 
+        // Инициализация списка заказов
+        ordersList = new ArrayList<>();
+
+        // Получение списка заказов из SharedPreferences
+        SharedPreferences orderPreferences = getSharedPreferences("User  Orders", MODE_PRIVATE);
+        Set<String> ordersSet = orderPreferences.getStringSet("orders", new HashSet<>());
+        if (ordersSet != null) {
+            ordersList.addAll(ordersSet);
+        }
+
+        // Настройка адаптера для списка заказов
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ordersList);
+        ordersListView.setAdapter(adapter);
+
         // Обработка нажатия кнопки сохранения
         saveButton.setOnClickListener(view -> {
             // Логика сохранения данных (например, в SharedPreferences)
@@ -64,15 +79,7 @@ public class ProfileActivity extends AppCompatActivity {
             Toast.makeText(ProfileActivity.this, "Вы вышли из системы", Toast.LENGTH_SHORT).show();
             finish(); // Закрываем активность
         });
-
-        // Получение списка заказов из SharedPreferences
-        SharedPreferences orderPreferences = getSharedPreferences("User  Orders", MODE_PRIVATE);
-        Set<String> ordersSet = orderPreferences.getStringSet("orders", new HashSet<>());
-        ArrayList<String> ordersList = new ArrayList<>(ordersSet);
-
-        // Настройка адаптера для списка заказов
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ordersList);
-        ordersListView.setAdapter(adapter);
     }
 }
+
 

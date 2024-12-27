@@ -60,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
             users.put(username, password);
 
             // Сохранение логина и почты в SharedPreferences
-            SharedPreferences sharedPreferences = getSharedPreferences("User Prefs", MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getSharedPreferences("User  Prefs", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("username", username);
             editor.putString("email", email);
@@ -72,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
             // Закрываем активность регистрации
             finish();
         });
+
     }
 
     // Метод для проверки корректности email

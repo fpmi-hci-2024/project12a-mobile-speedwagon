@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Метод для инициализации пользователей
     private void initializeUsers() {
+        users.put("user", "12345");
         users.put("ivanov", "1");
         users.put("petrov", "password2");
         users.put("sidorov", "password3");

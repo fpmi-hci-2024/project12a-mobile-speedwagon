@@ -27,14 +27,14 @@
     </string-array>
 
     <string-array name="boarding_points">
-        <item>Станция 1</item>
-        <item>Станция 2</item>
-        <item>Станция 3</item>
+        <item>Автовокзал "Центральный"</item>
+        <item>Автостанция "Автозаводская"</item>
+        <item>Автостанция "Юго-Западная"</item>
     </string-array>
     <string-array name="drop_off_points">
-        <item>Станция A</item>
-        <item>Станция B</item>
-        <item>Станция C</item>
+        <item>Автовокзал "Гомель"</item>
+        <item>Автостанция "Центролит"</item>
+        <item>Автостанция "Гомель-Чётный"</item>
     </string-array>
     <string-array name="dates_array">
         <item>Сегодня</item>
@@ -43,11 +43,11 @@
         <item>На выходные</item>
     </string-array>
     <string-array name="passengers_array">
-        <item>5-10 пассажиров</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
+        <item>1 место</item>
+        <item>2 места</item>
+        <item>3 места</item>
+        <item>4 места</item>
+        <item>5 мест</item>
         <item>Больше</item>
     </string-array>
 </resources>
